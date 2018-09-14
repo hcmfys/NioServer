@@ -1,7 +1,5 @@
 package org.springbus;
 
-import java.nio.ByteBuffer;
-
 public class LineSplitHandler  extends  AbstractMessageEvent{
 
     @Override
