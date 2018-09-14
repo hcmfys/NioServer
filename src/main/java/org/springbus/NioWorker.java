@@ -74,33 +74,16 @@ public class NioWorker  implements  Runnable  {
                  while( inters.hasNext()) {
                      SelectionKey key=   inters.next();
                      if( key.isReadable() ){
-                         SocketChannel  channel= (SocketChannel ) key.channel();
-                         ByteBuffer byteBuffer=ByteBuffer.allocate(1024);
-                         for (;;) {
-                             int r = channel.read(byteBuffer);
-                             logger.info(" rev len "+r);
-                             if(r>0) {
-                                 byteBuffer.flip();
-                                 logger.info(ByteUtils.convert2String(byteBuffer));
-                             }
-                             else if (r == 0) {
-                                 break;
-                             } else if (r < 0) {
+                       ByteUtils.readBuffer(key);
 
-                                 try {
-                                     channel.close();
-                                     key.cancel();
-                                 }catch (Exception ex) {
-                                     logger.info("channel  connection close {} ",channel);
-                                 }
-                             }
-                         }
 
                      }
                      inters.remove();
                  }
              }
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 

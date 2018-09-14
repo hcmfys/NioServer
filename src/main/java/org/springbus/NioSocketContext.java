@@ -1,5 +1,7 @@
 package org.springbus;
 
+import javax.swing.*;
+import java.nio.ByteBuffer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -27,6 +29,20 @@ public    class NioSocketContext {
             }
         }
     }
+
+
+    private  static EventPipLine  pipLine;
+
+   public  static   EventPipLine  getPineLine() {
+       if (pipLine == null) {
+           pipLine = new EventPipLine();
+       }
+       return pipLine;
+   }
+
+   public  static  void fireEvent(ByteBuffer byteBuffer) {
+
+   }
 
 
     /**

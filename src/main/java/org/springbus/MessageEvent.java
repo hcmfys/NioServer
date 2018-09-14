@@ -1,10 +1,21 @@
 package org.springbus;
 
-public class MessageEvent {
+public abstract class  MessageEvent {
 
 
-    public void messageReceive() {
+    abstract void messageReceive(Object byteBuffer);
 
+
+
+
+    private MessageEvent e;
+
+    public void setNext(MessageEvent e) {
+        this.e = e;
+    }
+
+    public MessageEvent getNext() {
+        return e;
     }
 
 }
