@@ -20,10 +20,6 @@ private final static Logger logger = LoggerFactory.getLogger(SocketServer.class)
 
     private int port=8080;
 
-
-
-
-
     public void bind(){
         try {
             ServerSocketChannel serverChannel = ServerSocketChannel.open();
