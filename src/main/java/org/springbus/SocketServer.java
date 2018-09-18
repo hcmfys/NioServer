@@ -38,6 +38,7 @@ private final static Logger logger = LoggerFactory.getLogger(SocketServer.class)
             logger.info(" bind sucesss");
 
             NioSocketContext.newWorks(0);
+            NioSocketContext.getPineLine().addHandler(new LineSplitHandler());
             for (; ; ) {
 
                 //当有注册的事件到达时，方法返回，否则阻塞。

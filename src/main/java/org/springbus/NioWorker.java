@@ -74,7 +74,7 @@ public class NioWorker  implements  Runnable  {
                  while( inters.hasNext()) {
                      SelectionKey key=   inters.next();
                      if( key.isReadable() ){
-                       ByteUtils.readBuffer(key);
+                      // ByteUtils.readBuffer(key);
 
 
                      }

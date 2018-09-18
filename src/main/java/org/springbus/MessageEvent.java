@@ -6,8 +6,6 @@ public abstract class  MessageEvent {
     abstract void messageReceive(Object byteBuffer);
 
 
-
-
     private MessageEvent e;
 
     public void setNext(MessageEvent e) {
@@ -17,5 +15,8 @@ public abstract class  MessageEvent {
     public MessageEvent getNext() {
         return e;
     }
+
+    private  int eventType;
+
 
 }

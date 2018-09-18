@@ -12,14 +12,14 @@ public    class NioSocketContext {
 
      private static    NioWorker workers [] ;
      private static  AtomicInteger  atomicInteger=new AtomicInteger(0);
-    public static  void  newWorks(int nums)  throws  Exception {
-        if (nums <= 0) {
-            nums = Runtime.getRuntime().availableProcessors() ;
+    public static  void  newWorks(int nuns)  throws  Exception {
+        if (nuns <= 0) {
+            nuns = Runtime.getRuntime().availableProcessors() ;
         }
-        ExecutorService pool = Executors.newFixedThreadPool(nums);
+        ExecutorService pool = Executors.newFixedThreadPool(nuns);
 
-        workers = new NioWorker[nums];
-        for (int i = 0; i < nums; i++) {
+        workers = new NioWorker[nuns];
+        for (int i = 0; i < nuns; i++) {
             NioWorker worker = NioWorkerFactory.newClientWorker();
             if (worker != null) {
                 workers[i] = worker;

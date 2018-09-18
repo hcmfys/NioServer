@@ -1,7 +1,5 @@
 package org.springbus;
 
-import java.nio.ByteBuffer;
-
 public   abstract   class AbstractMessageEvent extends  MessageEvent {
 
     @Override
