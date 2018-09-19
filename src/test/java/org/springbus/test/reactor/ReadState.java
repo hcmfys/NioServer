@@ -1,5 +1,4 @@
 package org.springbus.test.reactor;
-import org.springbus.test.TCPHandler;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -15,7 +14,7 @@ public class ReadState implements HandlerState {
     }
 
     @Override
-    public void changeState(TCPHandler h) {
+    public void changeState( TCPHandler h) {
 
         h.setState(new WorkState());
     }
@@ -35,11 +34,10 @@ public class ReadState implements HandlerState {
             return;
         }
         String str = new String(arr); // 將讀取到的byte內容轉為字符串型態
-        if ((str != null) && !str.equals(" ")) {
+        if ((str != null) && !str.equals("")) {
             h.setState(new WorkState()); // 改變狀態(READING->WORKING)
             pool.execute(new WorkerThread(h, str)); // do process in worker thread
-            System.out.println(sc.socket().getRemoteSocketAddress().toString()
-                    + " > " + str);
+            System.out.println(sc.socket().getRemoteSocketAddress().toString() + " > " + str);
         }
 
     }
@@ -47,9 +45,9 @@ public class ReadState implements HandlerState {
     /*
      * 執行邏輯處理之函數
      */
-    synchronized void process(TCPHandler h, String str) {
+    synchronized void process( TCPHandler h, String str) {
         // do process(decode, logically process, encode)..
-        // ..
+        //
         h.setState(new WriteState()); // 改變狀態(WORKING->SENDING)
         this.sk.interestOps(SelectionKey.OP_WRITE); // 通過key改變通道註冊的事件
         this.sk.selector().wakeup(); // 使一個阻塞住的selector操作立即返回
@@ -63,7 +61,7 @@ public class ReadState implements HandlerState {
         TCPHandler h;
         String str;
 
-        public WorkerThread(TCPHandler h, String str) {
+        public WorkerThread( TCPHandler h, String str) {
             this.h = h;
             this.str = str;
         }

@@ -1,6 +1,4 @@
-package org.springbus.test;
-
-import org.springbus.test.reactor.Acceptor;
+package org.springbus.test.reactor;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -18,8 +16,8 @@ public class TCPReactor implements Runnable {
     public TCPReactor(int port) throws IOException {
         selector = Selector.open();
         ssc = ServerSocketChannel.open();
-        InetSocketAddress addr = new InetSocketAddress(port);
-        ssc.socket().bind(addr); // 在ServerSocketChannel綁定監聽端口
+        InetSocketAddress adder = new InetSocketAddress(port);
+        ssc.socket().bind(adder); // 在ServerSocketChannel綁定監聽端口
         ssc.configureBlocking(false); // 設置ServerSocketChannel為非阻塞
         SelectionKey sk = ssc.register(selector, SelectionKey.OP_ACCEPT); // ServerSocketChannel向selector註冊一個OP_ACCEPT事件，然後返回該通道的key
         sk.attach(new Acceptor(ssc)); // 給定key一個附加的Acceptor對象
@@ -39,7 +37,7 @@ public class TCPReactor implements Runnable {
             Set<SelectionKey> selectedKeys = selector.selectedKeys(); // 取得所有已就緒事件的key集合
             Iterator<SelectionKey> it = selectedKeys.iterator();
             while (it.hasNext()) {
-                dispatch((SelectionKey) (it.next())); // 根據事件的key進行調度
+                dispatch((it.next())); // 根據事件的key進行調度
                 it.remove();
             }
         }

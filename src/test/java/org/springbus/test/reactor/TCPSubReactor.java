@@ -1,4 +1,4 @@
-package org.springbus.test;
+package org.springbus.test.reactor;
 
 
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class TCPSubReactor implements Runnable {
                 Set<SelectionKey> selectedKeys = selector.selectedKeys(); // 取得所有已就緒事件的key集合
                 Iterator<SelectionKey> it = selectedKeys.iterator();
                 while (it.hasNext()) {
-                    dispatch((SelectionKey) (it.next())); // 根據事件的key進行調度
+                    dispatch((it.next())); // 根據事件的key進行調度
                     it.remove();
                 }
             }

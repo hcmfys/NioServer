@@ -1,7 +1,5 @@
 package org.springbus.test.reactor;
 
-import org.springbus.test.TCPHandler;
-
 import java.io.IOException;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.SocketChannel;
@@ -14,14 +12,14 @@ public class WorkState implements HandlerState {
 
     @Override
     public void changeState(TCPHandler h) {
-        // TODO Auto-generated method stub
+        // T
         h.setState(new WriteState());
     }
 
     @Override
     public void handle(TCPHandler h, SelectionKey sk, SocketChannel sc,
                        ThreadPoolExecutor pool) throws IOException {
-        // TODO Auto-generated method stub
+        //
 
     }
 }

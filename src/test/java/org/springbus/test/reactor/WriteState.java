@@ -1,7 +1,5 @@
 package org.springbus.test.reactor;
 
-import org.springbus.test.TCPHandler;
-
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
@@ -15,7 +13,7 @@ public class WriteState implements HandlerState {
 
     @Override
     public void changeState(TCPHandler h) {
-        // TODO Auto-generated method stub
+        //
         h.setState(new ReadState());
     }
 

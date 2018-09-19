@@ -1,6 +1,4 @@
 package org.springbus.test.reactor;
-import org.springbus.test.TCPHandler;
-import org.springbus.test.TCPSubReactor;
 
 import java.io.IOException;
 import java.nio.channels.SelectionKey;
@@ -24,6 +22,7 @@ public class Acceptor implements Runnable {
             selectors[i] = Selector.open();
             r[i] = new TCPSubReactor(selectors[i], ssc, i);
             t[i] = new Thread(r[i]);
+            t[i].setName("SubReactor worker-" + i);
             t[i].start();
         }
     }
@@ -32,15 +31,14 @@ public class Acceptor implements Runnable {
     public synchronized void run() {
         try {
             SocketChannel sc = ssc.accept(); // 接受client連線請求
-            System.out.println(sc.socket().getRemoteSocketAddress().toString()
-                    + " is connected.");
+            System.out.println(sc.socket().getRemoteSocketAddress().toString() + " is connected.");
 
             if (sc != null) {
                 sc.configureBlocking(false); // 設置為非阻塞
                 r[selIdx].setRestart(true); // 暫停線程
                 selectors[selIdx].wakeup(); // 使一個阻塞住的selector操作立即返回
-                SelectionKey sk = sc.register(selectors[selIdx],
-                        SelectionKey.OP_READ); // SocketChannel向selector[selIdx]註冊一個OP_READ事件，然後返回該通道的key
+                //SocketChannel向selector[selIdx]註冊一個OP_READ事件，然後返回該通道的key
+                SelectionKey sk = sc.register(selectors[selIdx], SelectionKey.OP_READ);
                 selectors[selIdx].wakeup(); // 使一個阻塞住的selector操作立即返回
                 r[selIdx].setRestart(false); // 重啟線程
                 sk.attach(new TCPHandler(sk, sc)); // 給定key一個附加的TCPHandler對象
