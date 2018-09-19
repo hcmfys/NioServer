@@ -5,7 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springbus.TimeUtils;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -51,7 +50,6 @@ public class NioTestOneSelector {
                         if (!key.isValid()) {
                             key.cancel();
                             key.channel().close();
-
                             continue;
                         }else {
                             if ( key.isAcceptable()) {
@@ -81,7 +79,7 @@ public class NioTestOneSelector {
         private SelectionKey key;
 
 
-        public WorkTaskRun(SelectionKey selectionKey) throws IOException {
+        public WorkTaskRun(SelectionKey selectionKey) throws Exception {
 
             this.key = selectionKey;
 
@@ -89,46 +87,54 @@ public class NioTestOneSelector {
 
 
         @Override
-        public void run() {
+        public void run()    {
             try {
                 SocketChannel channel = (SocketChannel) key.channel();
+              String remote=  channel.getRemoteAddress().toString();
 
-                ByteBuffer buffer = ByteBuffer.allocate(1024);
-                int len = channel.read(buffer);
+                if(key.isValid()) {
+                    ByteBuffer buffer = ByteBuffer.allocate(1024);
+                    int len = channel.read(buffer);
 
-                if (len > 0) {
-                    buffer.flip();
-                    String str = new String(buffer.array(), 0, len);
-                    logger.info("rev msg {}",str);
-                    if (str.equals("q") || str.equals("Q")) {
-                        String time = "\n time is : " + TimeUtils.getTime() + "\n";
-                        channel.write(ByteBuffer.wrap(time.getBytes()));
+                    if (len > 0) {
+                        buffer.flip();
+                        String str = new String(buffer.array(), 0, len);
+                        logger.info("rev msg {}", str);
+                        if (str.equals("q") || str.equals("Q")) {
+                            String time = "\n time is : " + TimeUtils.getTime() + "\n";
+                            channel.write(ByteBuffer.wrap(time.getBytes()));
 
-                    }
-                    if (str.equals("e") || str.equals("E")) {
-                        String time = "\n byte bye time is : " + TimeUtils.getTime() + "\n";
-                        channel.write(ByteBuffer.wrap(time.getBytes()));
+                        }
+                        if (str.equals("e") || str.equals("E")) {
+                            String time = "\n byte bye time is : " + TimeUtils.getTime() + "\n";
+                            channel.write(ByteBuffer.wrap(time.getBytes()));
+                            key.cancel();
+                            channel.close();
+
+                        } else {
+                            String msg = "\nbad msg  please press q to query time\n";
+                            channel.write(ByteBuffer.wrap(msg.getBytes()));
+                        }
+
+                    } else if (len < 0) {
+
+                        logger.info(" remote client " + ((SocketChannel) key.channel()).getRemoteAddress() + " closed");
                         key.cancel();
-                        channel.close();
+                        key.channel().close();
 
-                    } else {
-                        String msg = "\nbad msg  please press q to query time\n";
-                        channel.write(ByteBuffer.wrap(msg.getBytes()));
                     }
-
-                } else if (len < 0) {
-                    key.cancel();
-                    logger.info(" remote client " + ((SocketChannel) key.channel()).getRemoteAddress() + " closed");
-                    key.channel().close();
-
+                }else{
+                     throw new Exception(" 远程服务关闭" +remote);
                 }
             } catch (Exception ex) {
 
 
+                    logger.info(" remote client   closed" +ex.getMessage());
+
                 key.cancel();
                 try {
                     key.channel().close();
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -161,7 +167,7 @@ public class NioTestOneSelector {
             t.setName("boss-thread");
             t.start();
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

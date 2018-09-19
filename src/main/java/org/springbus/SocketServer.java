@@ -31,7 +31,7 @@ private final static Logger logger = LoggerFactory.getLogger(SocketServer.class)
             //只有当该事件到达时，Selector.select()会返回，否则一直阻塞。
             serverChannel.register(selector, SelectionKey.OP_ACCEPT);
 
-            logger.info(" bind sucesss");
+            logger.info(" bind sucesss on port ={}",port);
 
             NioSocketContext.newWorks(0);
             NioSocketContext.getPineLine().addHandler(new LineSplitHandler());

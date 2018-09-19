@@ -1,4 +1,4 @@
-package org.springbus.test;
+package org.springbus.test.reactor;
 
 public class ReactorTask implements  Runnable {
 
