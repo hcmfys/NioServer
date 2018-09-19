@@ -12,45 +12,43 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class NioTest {
-    private int port = 8013;
+    private int port = 8088;
 
 
     private static AtomicInteger atomicInteger = new AtomicInteger(0);
 
-
+    private ExecutorService executorService = Executors.newFixedThreadPool(10);
     class BossTaskRun implements Runnable {
         private Selector bossSelector;
         private  boolean restart=true;
 
-        public void setRestart(boolean restart){
-            this.restart=restart;
-        }
-
-        public  void waveUp() {
-
-        }
 
         public BossTaskRun(ServerSocketChannel serverSvr) throws IOException {
             bossSelector = Selector.open();
             serverSvr.socket().setReuseAddress(true);
+            restart=false;
+            bossSelector.wakeup();
             serverSvr.register(bossSelector, SelectionKey.OP_ACCEPT, this);
+            restart=true;
             System.out.println(" success  to create selector ");
         }
 
         @Override
         public void run() {
 
-            for (; ; ) {
+            while (! Thread.interrupted()) {
                 try {
 
                     while (restart) {
                         System.out.println(Thread.currentThread().getName() + " accept  running ");
                         int op = bossSelector.select(1000);
                         if (op == 0) continue;
-                        System.out.println(Thread.currentThread().getName() + "  op ={} " + op);
+                        System.out.println(Thread.currentThread().getName() + "  op = " + op);
                         Set<SelectionKey> keys = bossSelector.selectedKeys();
                         if (keys.size() <= 0) continue;
                         Iterator<SelectionKey> inters = keys.iterator();
@@ -83,6 +81,26 @@ public class NioTest {
         }
     }
 
+    class WorkRunInfo {
+        public WorkTaskRun getTask() {
+            return task;
+        }
+
+        public void setTask(WorkTaskRun task) {
+            this.task = task;
+        }
+
+        private  WorkTaskRun task;
+        public String getHostName() {
+            return hostName;
+        }
+
+        public void setHostName(String hostName) {
+            this.hostName = hostName;
+        }
+
+        private String  hostName;
+    }
 
     class WorkTaskRun implements Runnable {
         private Selector workSelector;
@@ -94,24 +112,20 @@ public class NioTest {
 
         }
 
+
+
         private  boolean restart=true;
-
-        public void setRestart(boolean restart){
-            this.restart=restart;
-        }
-
-        public  void waveUp() {
-
-            restart = true;
-        }
 
         public void doSelector(SocketChannel clientChannel) throws IOException {
 
             clientChannel.configureBlocking(false);
-            setRestart(false);
-            clientChannel.register(workSelector, SelectionKey.OP_READ, this);
+            restart=false;
             workSelector.wakeup();
-            setRestart(true);
+            WorkRunInfo workRunInfo=new WorkRunInfo();
+            workRunInfo.setTask(this);
+            workRunInfo.setHostName(clientChannel.getRemoteAddress().toString());
+            clientChannel.register(workSelector, SelectionKey.OP_READ, workRunInfo);
+            restart=true;
             System.out.println(" remote client " + clientChannel.getRemoteAddress().toString() + " connected ");
         }
 
@@ -124,7 +138,7 @@ public class NioTest {
         @Override
         public void run() {
 
-            for (; ; ) {
+            while (! Thread.interrupted()) {
                 try {
                     while (restart) {
                         System.out.println(Thread.currentThread().getName() + " running ");
@@ -137,54 +151,14 @@ public class NioTest {
                             while (inters.hasNext()) {
                                 SelectionKey key = inters.next();
                                 inters.remove();
-
-
-                                if (!key.isValid()) {
-                                    System.out.println(" remote client " + ((SocketChannel) key.channel()).getRemoteAddress() + " closed");
-                                    key.cancel();
-                                    key.channel().close();
-
-                                    continue;
-                                }
-
-
-                                if (key.isReadable()) {
-                                    try {
-                                        SocketChannel channel = (SocketChannel) key.channel();
-                                        ByteBuffer buffer = ByteBuffer.allocate(256);
-                                        int len = channel.read(buffer);
-                                        System.out.println("rev {} " + len);
-                                        if (len > 0) {
-                                            buffer.flip();
-                                            String str = new String(buffer.array(), 0, len);
-                                            if (str.equals("q") || str.equals("Q")) {
-                                                String time = "\n time is : " + TimeUtils.getTime() + "\n";
-                                                channel.write(ByteBuffer.wrap(time.getBytes()));
-
-                                            }
-                                            if (str.equals("e") || str.equals("E")) {
-                                                String time = "\n byte bye time is : " + TimeUtils.getTime() + "\n";
-                                                channel.write(ByteBuffer.wrap(time.getBytes()));
-                                                key.cancel();
-                                                channel.close();
-                                            } else {
-                                                String msg = "\nbad msg  please press q to query time\n";
-                                                channel.write(ByteBuffer.wrap(msg.getBytes()));
-                                            }
-
-                                        } else if (len < 0) {
-                                            key.cancel();
-                                            System.out.println(" remote client " + ((SocketChannel) key.channel()).getRemoteAddress() + " closed");
-                                            key.channel().close();
-
+                                if (  key.isValid() && key.isReadable()) {
+                                    //handler(key);
+                                    executorService.execute(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            handler(key);
                                         }
-                                    } catch (Exception ex) {
-
-                                        System.out.println(" read data error close connection \n");
-                                        System.out.println(" remote client " + ((SocketChannel) key.channel()).getRemoteAddress() + " closed");
-                                        key.cancel();
-                                        key.channel().close();
-                                    }
+                                    });
                                 }
                             }
                         }
@@ -194,6 +168,61 @@ public class NioTest {
                     e.printStackTrace();
                 }
 
+            }
+        }
+
+    }
+
+    private  void handler(SelectionKey key ) {
+
+        WorkRunInfo workRunInfo = (WorkRunInfo) key.attachment();
+        String threadName=  Thread.currentThread().getName();
+        try {
+
+            SocketChannel channel = (SocketChannel) key.channel();
+            if(!channel.isOpen()) {
+                key.attach(null);
+                key.cancel();
+                return;
+            }
+            byte[] bytes = new byte[128];
+            ByteBuffer buffer = ByteBuffer.wrap(bytes);
+            int len = channel.read(buffer);
+            System.out.println( threadName + "rev  size=  " + len);
+            if (len > 0) {
+                buffer.flip();
+                String str = new String(buffer.array(), 0, len);
+                System.out.println( threadName + "rev  data >>  " + str);
+                if (str.equals("q") || str.equals("Q")) {
+                    String time = "\n time is : " + TimeUtils.getTime() + "\n";
+                    channel.write(ByteBuffer.wrap(time.getBytes()));
+
+                }
+                if (str.equals("ex") || str.equals("E")) {
+                    String time = "\n byte bye time is : " + TimeUtils.getTime() + "\n";
+                    channel.write(ByteBuffer.wrap(time.getBytes()));
+                    key.cancel();
+                    channel.close();
+                } else {
+                    String msg = "\nbad msg  please press q to query time\n";
+                    channel.write(ByteBuffer.wrap(msg.getBytes()));
+                }
+                buffer.clear();
+
+            } else if (len < 0) {
+                key.cancel();
+                System.out.println(threadName + " remote client " + workRunInfo.getHostName() + " closed");
+                key.channel().close();
+
+            }
+        } catch (Exception ex) {
+            key.cancel();
+            System.out.println(threadName+ " read data error   " + workRunInfo.getHostName() + " close connection ");
+
+            try {
+                key.channel().close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
 
