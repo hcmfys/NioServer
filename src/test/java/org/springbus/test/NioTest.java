@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class NioTest {
-    private int port = 8088;
+    private int port = 8188;
 
 
     private static AtomicInteger atomicInteger = new AtomicInteger(0);
@@ -41,7 +41,7 @@ public class NioTest {
         @Override
         public void run() {
 
-            while (! Thread.interrupted()) {
+            while (!Thread.interrupted()) {
                 try {
 
                     while (restart) {
@@ -138,7 +138,7 @@ public class NioTest {
         @Override
         public void run() {
 
-            while (! Thread.interrupted()) {
+            while (!Thread.interrupted()) {
                 try {
                     while (restart) {
                         System.out.println(Thread.currentThread().getName() + " running ");
