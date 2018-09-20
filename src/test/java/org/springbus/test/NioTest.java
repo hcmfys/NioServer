@@ -41,7 +41,7 @@ public class NioTest {
         @Override
         public void run() {
 
-            while (!Thread.interrupted()) {
+            while (true) {
                 try {
 
                     while (restart) {
@@ -71,6 +71,7 @@ public class NioTest {
 
                         }
                     }
+                    Thread.sleep(10);
 
                     } catch(Exception e){
                         e.printStackTrace();
