@@ -50,9 +50,12 @@
         </triggeringPolicy>
     </appender>
 
-    <logger name="org.springbus" level="DEBUG">
+    <!--
+    <logger name="org.springbus" level="DEBUG"  >
         <appender-ref ref="STDOUT"/>
     </logger>
+
+-->
 
 
     <!-- 日志输出级别  -->

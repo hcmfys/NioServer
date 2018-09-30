@@ -18,7 +18,8 @@ public class SocketServer {
 
 private final static Logger logger = LoggerFactory.getLogger(SocketServer.class);
 
-    private int port=8080;
+    private int port=8088;
+    private  volatile Selector selector ;
 
     public void bind(){
         try {
@@ -26,19 +27,19 @@ private final static Logger logger = LoggerFactory.getLogger(SocketServer.class)
             serverChannel.configureBlocking(false);
             serverChannel.socket().bind(new InetSocketAddress(port));
             //获取通道管理器
-            Selector   selector= Selector.open();
+                  selector= Selector.open();
             //将通道管理器与通道绑定，并为该通道注册SelectionKey.OP_ACCEPT事件，
             //只有当该事件到达时，Selector.select()会返回，否则一直阻塞。
             serverChannel.register(selector, SelectionKey.OP_ACCEPT);
 
             logger.info(" bind sucesss on port ={}",port);
 
-            NioSocketContext.newWorks(0);
+            NioSocketContext.newWorks(10);
             NioSocketContext.getPineLine().addHandler(new LineSplitHandler());
             for (; ; ) {
 
                 //当有注册的事件到达时，方法返回，否则阻塞。
-                selector.select();
+                selector.select(1000);
 
                 //获取selector中的迭代器，选中项为注册的事件
                 Iterator<SelectionKey> ite=selector.selectedKeys().iterator();

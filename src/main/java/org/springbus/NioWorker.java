@@ -17,7 +17,7 @@ public class NioWorker  implements  Runnable  {
 
    private static final  Logger logger= LoggerFactory.getLogger(NioWorker.class);
 
-    private Selector select;
+    private volatile  Selector select;
 
     public Selector getSelect() {
         return select;
@@ -37,7 +37,7 @@ public class NioWorker  implements  Runnable  {
 
     private boolean sucess=false;
 
-
+private  boolean restart=false;
 
     public  NioWorker(){
         try {
@@ -59,28 +59,36 @@ public class NioWorker  implements  Runnable  {
     public void addToWorker(SocketChannel  clientChanel ) throws  Exception {
 
         clientChanel.configureBlocking(false);
+        restart=true;
+        select.wakeup();
+
         clientChanel.register(select, SelectionKey.OP_READ | SelectionKey.OP_WRITE);
 
+        restart=false;
     }
 
     @Override
     public void run() {
-        while(sucess) {
+        while(!Thread.interrupted()) {
             try {
-             int op=   select.select(1);
-               {
-                 Set<SelectionKey> keys = select.selectedKeys();
-               Iterator<SelectionKey> inters= keys.iterator();
-                 while( inters.hasNext()) {
-                     SelectionKey key=   inters.next();
-                     if( key.isReadable() ){
-                      // ByteUtils.readBuffer(key);
+                while(!restart) {
+                    int op = select.select();
+                    if(op>0){
+                        Set<SelectionKey> keys = select.selectedKeys();
+                        Iterator<SelectionKey> inters = keys.iterator();
+                        while (inters.hasNext()) {
+                            SelectionKey key = inters.next();
+                            if (key.isReadable()) {
+                                // ByteUtils.readBuffer(key);
 
 
-                     }
-                     inters.remove();
-                 }
-             }
+                            }
+                            inters.remove();
+                        }
+                    }else{
+                        Thread.sleep(1000);
+                    }
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (Exception e) {
