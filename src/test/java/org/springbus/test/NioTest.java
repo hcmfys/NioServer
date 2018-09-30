@@ -1,7 +1,8 @@
 package org.springbus.test;
 
 
-import org.springbus.TimeUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -10,19 +11,27 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class NioTest {
-    private int port = 8188;
 
+    private  static  int port = 8088;
+
+    ReentrantReadWriteLock readWriteLock =new ReentrantReadWriteLock();
+private Logger  logger= LoggerFactory.getLogger( NioTest.class);
 
     private static AtomicInteger atomicInteger = new AtomicInteger(0);
 
     private ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+
     class BossTaskRun implements Runnable {
         private Selector bossSelector;
         private  boolean restart=true;
@@ -35,20 +44,20 @@ public class NioTest {
             bossSelector.wakeup();
             serverSvr.register(bossSelector, SelectionKey.OP_ACCEPT, this);
             restart=true;
-            System.out.println(" success  to create selector ");
+            logger.info(" success  to create selector ");
         }
 
         @Override
         public void run() {
 
-            while (true) {
+            while (!Thread.interrupted()) {
                 try {
 
                     while (restart) {
-                        System.out.println(Thread.currentThread().getName() + " accept  running ");
+                        //System.out.println(Thread.currentThread().getName() + " accept  running ");
                         int op = bossSelector.select(1000);
                         if (op == 0) continue;
-                        System.out.println(Thread.currentThread().getName() + "  op = " + op);
+                        logger.info(Thread.currentThread().getName() + "  op = " + op);
                         Set<SelectionKey> keys = bossSelector.selectedKeys();
                         if (keys.size() <= 0) continue;
                         Iterator<SelectionKey> inters = keys.iterator();
@@ -70,6 +79,7 @@ public class NioTest {
 
 
                         }
+                        keys.clear();
                     }
                     Thread.sleep(10);
 
@@ -83,6 +93,11 @@ public class NioTest {
     }
 
     class WorkRunInfo {
+         WorkRunInfo(){
+             msgBuf=ByteBuffer.allocate(5);
+
+         }
+
         public WorkTaskRun getTask() {
             return task;
         }
@@ -101,6 +116,9 @@ public class NioTest {
         }
 
         private String  hostName;
+
+
+        public  volatile  ByteBuffer msgBuf;
     }
 
     class WorkTaskRun implements Runnable {
@@ -127,7 +145,7 @@ public class NioTest {
             workRunInfo.setHostName(clientChannel.getRemoteAddress().toString());
             clientChannel.register(workSelector, SelectionKey.OP_READ, workRunInfo);
             restart=true;
-            System.out.println(" remote client " + clientChannel.getRemoteAddress().toString() + " connected ");
+            logger.info(" remote client " + clientChannel.getRemoteAddress().toString() + " connected ");
         }
 
 
@@ -142,27 +160,22 @@ public class NioTest {
             while (!Thread.interrupted()) {
                 try {
                     while (restart) {
-                        System.out.println(Thread.currentThread().getName() + " running ");
+                       // System.out.println(Thread.currentThread().getName() + " running ");
                         int op = workSelector.select(1000);
                         if (op == 0) continue;
-                        System.out.println(Thread.currentThread().getName() + "  op =" + op);
+                        //System.out.println(Thread.currentThread().getName() + "  op =" + op);
                         Set<SelectionKey> keys = workSelector.selectedKeys();
-                        {
+
                             Iterator<SelectionKey> inters = keys.iterator();
                             while (inters.hasNext()) {
                                 SelectionKey key = inters.next();
                                 inters.remove();
                                 if (  key.isValid() && key.isReadable()) {
-                                    //handler(key);
-                                    executorService.execute(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            handler(key);
-                                        }
-                                    });
+                                     handler(key);
+                                   // executorService.execute(() -> handler(key));
                                 }
                             }
-                        }
+
                     }
 
                 } catch (Exception e) {
@@ -174,6 +187,22 @@ public class NioTest {
 
     }
 
+    public ByteBuffer  appendBuffer(ByteBuffer src,ByteBuffer to) {
+
+        int pos = to.position();
+        int cap = to.capacity();
+        if (pos + src.limit() > cap) {
+            int newSize = 2 * cap + src.limit();
+            ByteBuffer newBuf = ByteBuffer.allocate(newSize);
+            newBuf.put(to.array(), 0, to.limit());
+            to.clear();
+            to = newBuf;
+        }
+
+        to.put(src.array(), 0, src.limit());
+        return to;
+    }
+
     private  void handler(SelectionKey key ) {
 
         WorkRunInfo workRunInfo = (WorkRunInfo) key.attachment();
@@ -182,48 +211,86 @@ public class NioTest {
 
             SocketChannel channel = (SocketChannel) key.channel();
             if(!channel.isOpen()) {
-                key.attach(null);
-                key.cancel();
-                return;
+             throw  new Exception("close channel");
             }
-            byte[] bytes = new byte[128];
-            ByteBuffer buffer = ByteBuffer.wrap(bytes);
-            int len = channel.read(buffer);
-            System.out.println( threadName + "rev  size=  " + len);
+
+
+            ByteBuffer msgBuf=ByteBuffer.allocate(5);
+
+            int len = channel.read(msgBuf);
+
+
+
+
+
             if (len > 0) {
-                buffer.flip();
-                String str = new String(buffer.array(), 0, len);
-                System.out.println( threadName + "rev  data >>  " + str);
-                if (str.equals("q") || str.equals("Q")) {
-                    String time = "\n time is : " + TimeUtils.getTime() + "\n";
-                    channel.write(ByteBuffer.wrap(time.getBytes()));
 
-                }
-                if (str.equals("ex") || str.equals("E")) {
-                    String time = "\n byte bye time is : " + TimeUtils.getTime() + "\n";
-                    channel.write(ByteBuffer.wrap(time.getBytes()));
-                    key.cancel();
-                    channel.close();
-                } else {
-                    String msg = "\nbad msg  please press q to query time\n";
-                    channel.write(ByteBuffer.wrap(msg.getBytes()));
-                }
-                buffer.clear();
+                msgBuf.flip();
 
+
+                if( workRunInfo.msgBuf.position() +len >   workRunInfo.msgBuf.capacity() ) {
+                    workRunInfo.msgBuf=  appendBuffer(msgBuf, workRunInfo.msgBuf);
+                }else{
+                    workRunInfo.msgBuf.put(msgBuf);
+                }
+
+
+                int pos=workRunInfo.msgBuf.position();
+                int limit=workRunInfo.msgBuf.limit();
+                workRunInfo.msgBuf.flip();
+                int nextIndex=0;
+                List<String> lineList=new ArrayList<>();
+                for(int i=0;i<workRunInfo.msgBuf.limit();i++ ) {
+                    byte b = workRunInfo.msgBuf.get(i);
+                    if (b == '\r') {
+                        if( (i+1)<workRunInfo.msgBuf.limit() ) {
+                            byte nextB = workRunInfo.msgBuf.get(i + 1);
+                            if (nextB == '\n') {
+                                i++;
+                            }else{
+                                workRunInfo.msgBuf.position(i);
+                            }
+                        }
+                        String str = new String(workRunInfo.msgBuf.array(), nextIndex, i -nextIndex-1);
+                        lineList.add(str);
+                        nextIndex = i ;
+                    }
+                }
+
+
+                if(lineList.size()>0) {
+                    logger.info(threadName+ " --msg ="+ workRunInfo.msgBuf  );
+                    workRunInfo.msgBuf.position(nextIndex+1);
+                    workRunInfo.msgBuf=  workRunInfo.msgBuf.compact();
+                    for ( int i=0;i<lineList.size();i++ ){
+                        logger.info(threadName+ " -->>>>"+ lineList.get(i) );
+                    }
+                    logger.info(threadName+ " end --msg ="+ workRunInfo.msgBuf  );
+
+                }else {
+                    workRunInfo.msgBuf.position(pos);
+                    workRunInfo.msgBuf.limit(limit);
+                }
             } else if (len < 0) {
-                key.cancel();
-                System.out.println(threadName + " remote client " + workRunInfo.getHostName() + " closed");
-                key.channel().close();
+                logger.info(threadName+ " exit on len <0 ");
+                throw  new Exception("close channel");
 
             }
         } catch (Exception ex) {
             key.cancel();
-            System.out.println(threadName+ " read data error   " + workRunInfo.getHostName() + " close connection ");
 
+            if(workRunInfo!=null) {
+                logger.info(threadName+ " read data error   " + workRunInfo.getHostName() + " close connection " +ex.getMessage());
+                if( workRunInfo.msgBuf!=null) {
+                    workRunInfo.msgBuf.clear();
+                    workRunInfo.msgBuf = null;
+                }
+
+            }
             try {
                 key.channel().close();
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.info(e.getLocalizedMessage());
             }
         }
 

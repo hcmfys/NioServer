@@ -69,7 +69,7 @@ public class TimeServer {
     public static void main(String[] args) {
         TimeServer timeServer = new TimeServer();
         try {
-            timeServer.bind(9999);
+            timeServer.bind(8088);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
