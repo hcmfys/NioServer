@@ -1,6 +1,5 @@
 package org.springbus.test.tio;
 
-import org.springbus.test.bytebuf.ByteBuff;
 import org.tio.core.ChannelContext;
 import org.tio.core.GroupContext;
 import org.tio.core.Tio;
@@ -15,20 +14,20 @@ public class MyServerAioHandler implements ServerAioHandler {
     @Override
     public Packet decode(ByteBuffer buffer, int limit, int position, int readableLength, ChannelContext channelContext) throws AioDecodeException {
 
-
-        int i=position;
         boolean hasData=false;
         int endIndex=0;
         int startIndex=position;
-        for(;i<  limit;i++) {
-            if( buffer.get(i)=='\r'  ) {
-                int next=i;
+        byte L_R='\r';
+        byte L_N='\n';
+        for(  int i=position;i<limit;i++) {
+            if( buffer.get(i)==L_R  ) {
+                int next=i+1;
                 endIndex=next;
                 hasData=true;
-                if(next+1 < limit) {
-                    if (buffer.get(next + 1) == '\n') {
+                if(next < limit) {
+                    if (buffer.get(next) == L_N) {
                         hasData = true;
-                        endIndex = next + 1;
+                        endIndex =next;
                     }
                 }
                 if(hasData){

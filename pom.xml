@@ -43,5 +43,14 @@
             <version>${msgpack.version}</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.t-io</groupId>
+            <artifactId>tio-core</artifactId>
+            <version>3.0.2.v20180612-RELEASE</version>
+        </dependency>
+
+
+
     </dependencies>
 </project>

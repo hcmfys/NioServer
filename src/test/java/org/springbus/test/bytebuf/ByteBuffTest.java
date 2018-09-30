@@ -8,10 +8,10 @@ import org.slf4j.LoggerFactory;
 
 import java.nio.charset.Charset;
 
-public class ByteBuff {
+public class ByteBuffTest {
 
 
-    Logger  logger= LoggerFactory.getLogger(ByteBuff.class);
+    Logger  logger= LoggerFactory.getLogger(ByteBuffTest.class);
     @Test
     public void test() {
 
