@@ -54,7 +54,7 @@ public class ByteUtils {
      */
     public static ByteBuffer readBuffer(SelectionKey key) throws Exception {
 
-        int defaultSize=1024;
+        int defaultSize=10;
         ByteBuffer byteBuffer = (ByteBuffer) key.attachment();
         if (byteBuffer == null) {
             byteBuffer = ByteBuffer.allocate(defaultSize);
@@ -67,13 +67,15 @@ public class ByteUtils {
 
             int r ;
             while ((r = channel.read(byteBuffer)) > 0) {
-                if (byteBuffer.hasRemaining()) {
+                if (!byteBuffer.hasRemaining()) {
                     ByteBuffer newBuff = ByteBuffer.allocate(byteBuffer.capacity() + defaultSize);
-                    newBuff.put(byteBuffer.array(), 0, byteBuffer.capacity());
+                    newBuff.put(byteBuffer.array(), 0, byteBuffer.limit());
                     byteBuffer.clear();
                     byteBuffer = newBuff;
+                    key.attach(byteBuffer);
                 }
             }
+
             if (r == 0) {
                 break;
             } else if (r < 0) {
@@ -84,9 +86,17 @@ public class ByteUtils {
                 } catch (Exception ex) {
                     throw ex;
                 }
+            }else{
+
+                System.out.println("========");
+                System.out.println( new String( byteBuffer.array(),0,byteBuffer.position()));
+                System.out.println("============");
+                System.out.println(byteBuffer);
+                return  byteBuffer;
+
             }
         }
-        return byteBuffer;
+        return null;
 
     }
 

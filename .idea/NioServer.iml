@@ -54,5 +54,12 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.0" level="project" />
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.8.11" level="project" />
     <orderEntry type="library" name="Maven: org.jodd:jodd-bean:3.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.mina:mina-core:3.0.0-M2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.mina:mina-codec:3.0.0-M2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.rxtx:rxtx:2.1.7" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.11.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.14.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents.core5:httpcore5-h2:5.0-beta4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents.core5:httpcore5:5.0-beta4" level="project" />
   </component>
 </module>

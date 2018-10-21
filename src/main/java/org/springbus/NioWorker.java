@@ -79,8 +79,10 @@ private  boolean restart=false;
                         while (inters.hasNext()) {
                             SelectionKey key = inters.next();
                             if (key.isReadable()) {
-                                // ByteUtils.readBuffer(key);
-
+                               ByteBuffer buffer=  ByteUtils.readBuffer(key);
+                               if(buffer!=null){
+                                   NioSocketContext.fireEvent(buffer);
+                               }
 
                             }
                             inters.remove();

@@ -40,7 +40,7 @@ public    class NioSocketContext {
    }
 
    public  static  void fireEvent(ByteBuffer byteBuffer) {
-
+        pipLine.next().messageReceive(byteBuffer);
    }
 
 

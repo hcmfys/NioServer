@@ -14,4 +14,8 @@ public class EventPipLine {
          }
     }
 
+    public  MessageEvent next(){
+        return  linkedList.peek();
+    }
+
 }

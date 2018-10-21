@@ -1,5 +1,6 @@
 package org.springbus;
 
+@SuppressWarnings("AlibabaAbstractMethodOrInterfaceMethodMustUseJavadoc")
 public abstract class  MessageEvent {
 
 
