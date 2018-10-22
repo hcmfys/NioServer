@@ -43,11 +43,12 @@ public class SSLSocketChannel {
 
             sslContext.init(null,
                     new TrustManager[]{new EasyX509TrustManager(null)},
-                    null);
+                    new java.security.SecureRandom());
 // create Engine
             sslEngine = sslContext.createSSLEngine();
 // begin
             sslEngine.setUseClientMode(true);
+
 
             sslEngine.setEnableSessionCreation(true);
             SSLSession session = sslEngine.getSession();
@@ -104,7 +105,15 @@ public class SSLSocketChannel {
         Utilities.print("b.remaining " + b.remaining() + "\n");
         while (b.hasRemaining()) {
             Utilities.print("b.remaining " + b.remaining() + "\n");
-            res = sslEngine.unwrap(b, clientIn);
+            try{
+                res = sslEngine.unwrap(b, clientIn);
+            }catch (Exception w) {
+                w.printStackTrace();
+
+               return  clientIn;
+            }
+
+
             Utilities.print("unwrap:\n" + res.toString() + "\n");
             if (res.getHandshakeStatus() ==
                     SSLEngineResult.HandshakeStatus.NEED_TASK) {

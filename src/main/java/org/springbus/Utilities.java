@@ -343,6 +343,7 @@ public class Utilities {
      *@param  s  String to be printed
      */
     public static void print(String s) {
+        System.out.println(s);
         if (debug) {
             String settings = System.getProperty("user.home", ".") + File.separator + ".wlFxp";
             System.out.print(s);
