@@ -15,7 +15,7 @@ public class UdbClient {
         DatagramChannel datagramChannel = DatagramChannel.open();
 
         datagramChannel.configureBlocking(false);
-        ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+        ByteBuffer byteBuffer = ByteBuffer.allocate(7182);
 
         Thread t=new Thread(new Runnable() {
             @Override
@@ -27,7 +27,7 @@ public class UdbClient {
                         if (socketAddress != null) {
                             byteBuffer.flip();
                             int pos = byteBuffer.limit();
-                            System.out.println("<<< "+ new String(byteBuffer.array(), 0, pos));
+                            System.out.println(  "size="+pos + " <<< "+ new String(byteBuffer.array(), 0, pos));
                         }else{
                             Thread.sleep(1000);
                         }

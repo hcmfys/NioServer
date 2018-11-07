@@ -1,9 +1,10 @@
 package org.springbus.test.grizzly;
 
-import java.io.IOException;
 import org.glassfish.grizzly.filterchain.BaseFilter;
 import org.glassfish.grizzly.filterchain.FilterChainContext;
 import org.glassfish.grizzly.filterchain.NextAction;
+
+import java.io.IOException;
 
 /**
  * Client filter is responsible for redirecting server response to the standard output

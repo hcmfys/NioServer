@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NioServer" />
+        <module name="NioSocket" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="NioServer" target="8" />
+      <module name="NioSocket" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

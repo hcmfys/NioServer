@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/NioServer.iml" filepath="$PROJECT_DIR$/.idea/NioServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NioSocket.iml" filepath="$PROJECT_DIR$/NioSocket.iml" />
     </modules>
   </component>
 </project>

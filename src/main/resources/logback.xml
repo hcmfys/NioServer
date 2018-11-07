@@ -3,9 +3,9 @@
         xmlns="http://ch.qos.logback/xml/ns/logback"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback https://raw.githubusercontent.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd"
-        debug="false">
+        debug="false"  >
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_HOME" value="logs/"/>
+    <property name="LOG_HOME" value="logs/"    />
     <!-- 控制台输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -14,7 +14,7 @@
         </encoder>
     </appender>
     <!-- 按照每天生成日志文件 -->
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"  >
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--日志文件输出的文件名-->
 
@@ -50,17 +50,17 @@
         </triggeringPolicy>
     </appender>
 
-    <!--
-    <logger name="org.springbus" level="DEBUG"  >
+
+    <logger name="org.springbus" level="DEBUG" additivity="false"  >
         <appender-ref ref="STDOUT"/>
     </logger>
 
--->
+
 
 
     <!-- 日志输出级别  -->
-    <root level="trace">
-        <appender-ref ref="STDOUT"/>
+    <root level="trace" >
+        <appender-ref ref="STDOUT"  />
         <appender-ref ref="FILE"/>
     </root>
 
