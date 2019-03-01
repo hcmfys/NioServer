@@ -28,6 +28,7 @@ public class MyInvocationHandler implements InvocationHandler {
         for(Object o : args){
             System.out.println("arg: "+ o);
         }
+        method.getReturnType();
         //通过反射调用 被代理类的方法
        // method.invoke(object, args);
        return  Jsoup.parse(new URL(args[0]+""), 30000).body().text();
