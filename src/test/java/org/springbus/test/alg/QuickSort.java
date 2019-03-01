@@ -2,6 +2,9 @@ package org.springbus.test.alg;
 
 import java.util.Arrays;
 
+/**
+ * 快速排序
+ */
 public class QuickSort {
 
 
@@ -28,7 +31,6 @@ public class QuickSort {
             //找出一个标准来比较
             int stand = arr[start];
             System.out.println("start="+start +" Len="+arr.length +"  end="+end +" 比较标准="+stand);
-
             log(arr,start, end,"比较前");
             int low = start;
             int high = end;
