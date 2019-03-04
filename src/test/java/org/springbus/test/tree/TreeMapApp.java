@@ -16,6 +16,6 @@ public class TreeMapApp {
         map.put(20, 30);
         map.put(40, 40);
         map.put(50, 50);
-        System.out.println(map);
+        System.out.println(map.keySet());
     }
 }
