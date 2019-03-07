@@ -72,4 +72,13 @@
     <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-framework:2.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.3" level="project" />
   </component>
+  <component name="RetrotranslatorModuleSettings">
+    <setting name="enabled" value="false" />
+    <setting name="retroTests" value="false" />
+    <setting name="stripSign" value="false" />
+    <setting name="verbose" value="false" />
+    <setting name="lazy" value="false" />
+    <setting name="verify" value="false" />
+    <setting name="targetJdk" value="" />
+  </component>
 </module>

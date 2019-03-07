@@ -27,12 +27,6 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-text:1.3" level="project" />
     <orderEntry type="library" name="Maven: cn.hutool:hutool-all:4.0.12" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.47" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:25.1-jre" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:2.0.0" level="project" />
-    <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.1.3" level="project" />
-    <orderEntry type="library" name="Maven: com.google.j2objc:j2objc-annotations:1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.14" level="project" />
     <orderEntry type="library" name="Maven: com.github.ben-manes.caffeine:caffeine:2.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.jodd:jodd-core:4.3.2" level="project" />
     <orderEntry type="library" name="Maven: org.redisson:redisson:3.7.1" level="project" />
@@ -61,5 +55,29 @@
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.14.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents.core5:httpcore5-h2:5.0-beta4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents.core5:httpcore5:5.0-beta4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.curator:curator-framework:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.curator:curator-recipes:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.curator:curator-client:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.5.1-alpha" level="project" />
+    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.2" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty:3.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: net.java.dev.javacc:javacc:5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:16.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:mockwebserver:3.11.0" level="project" />
+    <orderEntry type="library" name="Maven: org.conscrypt:conscrypt-openjdk-uber:1.1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.55" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-framework:2.4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.3" level="project" />
+  </component>
+  <component name="RetrotranslatorModuleSettings">
+    <setting name="enabled" value="false" />
+    <setting name="retroTests" value="false" />
+    <setting name="stripSign" value="false" />
+    <setting name="verbose" value="false" />
+    <setting name="lazy" value="false" />
+    <setting name="verify" value="false" />
+    <setting name="targetJdk" value="" />
   </component>
 </module>
