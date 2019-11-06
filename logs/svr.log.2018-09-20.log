@@ -1,0 +1,460 @@
+2018-09-20 16:19:52.564 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 16:19:52.567 [main] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+2018-09-20 16:19:52.575 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 16:19:52.575 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 16:19:52.576 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 16:19:52.576 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 16:19:52.577 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 16:19:52.577 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 16:19:52.578 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 16:19:52.578 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 16:19:52.578 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 16:19:52.657 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 16:19:52.658 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 16:19:52.658 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 16:19:52.658 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 16:19:52.670 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+2018-09-20 16:19:52.670 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+2018-09-20 16:19:52.855 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@134593bf
+2018-09-20 16:19:52.855 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@4bb4de6a
+2018-09-20 16:19:52.856 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@7ba18f1b
+2018-09-20 16:19:52.857 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@2f8f5f62
+2018-09-20 16:19:52.857 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@1068e947
+2018-09-20 16:19:52.858 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@7dc222ae
+2018-09-20 16:19:52.858 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@aecb35a
+2018-09-20 16:19:52.859 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@5fcd892a
+2018-09-20 16:19:52.859 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@8b87145
+2018-09-20 16:19:52.860 [main] TRACE io.netty.channel.nio.NioEventLoop - Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@6483f5ae
+2018-09-20 16:19:52.862 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->1
+2018-09-20 16:19:52.864 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.864 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->4
+2018-09-20 16:19:52.864 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->2
+2018-09-20 16:19:52.864 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->5
+2018-09-20 16:19:52.864 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->3
+2018-09-20 16:19:52.865 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->6
+2018-09-20 16:19:52.865 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.865 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.865 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.865 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.865 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->12
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->11
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->13
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->7
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->15
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->14
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->16
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->17
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.866 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->8
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->21
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->22
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->23
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->24
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->25
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->27
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->26
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->18
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->31
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->32
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->33
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->36
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->37
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->41
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->42
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->43
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->51
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->52
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->53
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->61
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->63
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->73
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->83
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->9
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->47
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->71
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->34
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->62
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.869 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->35
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->46
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->28
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->81
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->57
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-3--  execute ->93
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->44
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->72
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-3] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->38
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.867 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->10
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->67
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->45
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->56
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->82
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->48
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->55
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->58
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-2--  execute ->92
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->65
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-2] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->68
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->75
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->78
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->85
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->88
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->77
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->54
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-1--  execute ->91
+2018-09-20 16:19:52.871 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.870 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->66
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-8--  execute ->98
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->87
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-7--  execute ->97
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-7] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->20
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-1] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-5--  execute ->95
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->64
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-5] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->74
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->84
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-8] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-4--  execute ->94
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->76
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->19
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-4] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.872 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->86
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->30
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->29
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-6--  execute ->96
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-6] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.873 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->39
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->40
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->49
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->50
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->59
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->60
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->69
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->70
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->79
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->80
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->89
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->90
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-9--  execute ->99
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest - false--》nioEventLoopGroup-2-10--  execute ->100
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-9] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:19:52.874 [nioEventLoopGroup-2-10] INFO  org.springbus.test.thread.ThreadTest -  success null
+2018-09-20 16:28:35.927 [main] INFO  org.springbus.test.thread.AssertTest -  test true
+2018-09-20 16:33:51.593 [main] INFO  org.springbus.test.thread.AssertTest -  test true
+2018-09-20 16:33:51.595 [main] INFO  org.springbus.test.thread.AssertTest -  test false
+2018-09-20 16:34:04.826 [main] INFO  org.springbus.test.thread.AssertTest -  test true
+2018-09-20 16:34:52.949 [main] INFO  org.springbus.test.thread.AssertTest -  test true
+2018-09-20 16:43:44.243 [main] INFO  org.springbus.test.thread.AssertTest -  test true
+2018-09-20 17:39:43.889 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:39:43.893 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:39:43.895 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:39:43.895 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:39:43.895 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:39:43.896 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:39:43.897 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:39:43.897 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:39:43.897 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:39:43.899 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:39:43.996 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:39:43.997 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:39:43.997 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:39:43.997 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:39:44.002 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:40:24.289 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:40:24.292 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:40:24.293 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:40:24.293 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:40:24.294 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:40:24.294 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:40:24.295 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:40:24.295 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:40:24.295 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:40:24.295 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:40:24.386 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:40:24.386 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:40:24.386 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:40:24.386 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:40:24.393 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:40:24.400 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:40:24.401 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:42:27.279 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:42:27.284 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:42:27.285 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:42:27.286 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:42:27.286 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:42:27.287 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:42:27.288 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:42:27.288 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:42:27.288 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:42:27.288 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:42:27.377 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:42:27.377 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:42:27.377 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:42:27.377 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:42:27.383 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:42:27.386 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:42:27.386 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:42:49.316 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:42:49.320 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:42:49.321 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:42:49.321 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:42:49.321 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:42:49.322 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:42:49.322 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:42:49.322 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:42:49.322 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:42:49.327 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:42:49.416 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:42:49.416 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:42:49.417 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:42:49.417 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:42:49.429 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:42:49.433 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:42:49.434 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:44:37.877 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:44:37.883 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:44:37.885 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:44:37.885 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:44:37.886 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:44:37.887 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:44:37.887 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:44:37.888 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:44:37.888 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:44:37.888 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:44:37.971 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:44:37.972 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:44:37.972 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:44:37.972 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:44:37.978 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:44:37.980 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:44:37.980 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:45:26.224 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:45:26.228 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:45:26.229 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:45:26.229 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:45:26.230 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:45:26.230 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:45:26.231 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:45:26.231 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:45:26.231 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:45:26.231 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:45:26.313 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:45:26.313 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:45:26.313 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:45:26.314 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:45:26.320 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:45:26.322 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:45:26.322 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:45:57.962 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:45:57.966 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:45:57.968 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:45:57.969 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:45:57.969 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:45:57.970 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:45:57.970 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:45:57.970 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:45:57.970 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:45:57.970 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:45:58.074 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:45:58.074 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:45:58.074 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:45:58.074 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:45:58.079 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:45:58.082 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:45:58.082 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:47:35.301 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:47:35.305 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:47:35.306 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:47:35.306 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:47:35.307 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:47:35.308 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:47:35.308 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:47:35.308 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:47:35.308 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:47:35.308 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:47:35.399 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:47:35.399 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:47:35.399 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:47:35.399 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:47:35.406 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:47:35.413 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:47:35.413 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:48:21.695 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:48:21.698 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:48:21.699 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:48:21.699 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:48:21.699 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:48:21.700 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:48:21.701 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:48:21.701 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:48:21.701 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:48:21.701 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:48:21.786 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:48:21.787 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:48:21.787 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:48:21.787 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:48:21.792 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:48:21.794 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:48:21.794 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:49:02.653 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:49:02.657 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:49:02.658 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:49:02.659 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:49:02.659 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:49:02.660 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:49:02.660 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:49:02.660 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:49:02.661 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:49:02.661 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:49:02.739 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:49:02.740 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:49:02.740 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:49:02.740 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:49:02.745 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:49:02.747 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:49:02.747 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:49:33.322 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:49:33.326 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:49:33.327 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:49:33.328 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:49:33.328 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:49:33.329 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:49:33.329 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:49:33.329 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:49:33.329 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:49:33.329 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:49:33.425 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:49:33.427 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:49:33.427 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:49:33.427 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:49:33.434 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:49:33.438 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:49:33.438 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 17:50:07.622 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 17:50:07.626 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 17:50:07.627 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 17:50:07.627 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 17:50:07.627 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 17:50:07.628 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 17:50:07.628 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 17:50:07.628 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 17:50:07.628 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 17:50:07.629 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 17:50:07.704 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 17:50:07.704 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 17:50:07.704 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 17:50:07.704 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 17:50:07.710 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 17:50:07.713 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 17:50:07.713 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 18:07:58.854 [main] INFO  org.springbus.test.ByteBuffTest - java.nio.HeapByteBuffer[pos=26 lim=48 cap=48]
+2018-09-20 18:07:58.858 [main] INFO  org.springbus.test.ByteBuffTest - buffer=abcdefghijklmnopqrstuvwxyz ,pos=26 remain=22  limit=48
+2018-09-20 18:07:58.860 [main] INFO  org.springbus.test.ByteBuffTest - newBuffer =abcdefghijklmnopqrstuvwxyz  pos=0 offset=26 
+2018-09-20 18:07:58.861 [main] INFO  org.springbus.test.ByteBuffTest - newBufferByPos=                      wxyz                       
+2018-09-20 18:08:22.267 [main] DEBUG i.n.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2018-09-20 18:08:22.271 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2018-09-20 18:08:22.272 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2018-09-20 18:08:22.273 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2018-09-20 18:08:22.273 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2018-09-20 18:08:22.274 [main] DEBUG io.netty.util.internal.PlatformDependent - Platform: Windows
+2018-09-20 18:08:22.274 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 8
+2018-09-20 18:08:22.274 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2018-09-20 18:08:22.274 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2018-09-20 18:08:22.274 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2018-09-20 18:08:22.351 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: available
+2018-09-20 18:08:22.351 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: C:\Users\hcmfys\AppData\Local\Temp (java.io.tmpdir)
+2018-09-20 18:08:22.351 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-20 18:08:22.351 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2018-09-20 18:08:22.356 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetectionLevel: simple
+2018-09-20 18:08:22.358 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2018-09-20 18:08:22.358 [main] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2018-09-20 18:08:31.231 [main] INFO  org.springbus.test.ByteBuffTest - java.nio.HeapByteBuffer[pos=26 lim=48 cap=48]
+2018-09-20 18:08:31.233 [main] INFO  org.springbus.test.ByteBuffTest - buffer=abcdefghijklmnopqrstuvwxyz ,pos=26 remain=22  limit=48
+2018-09-20 18:08:31.235 [main] INFO  org.springbus.test.ByteBuffTest - newBuffer =abcdefghijklmnopqrstuvwxyz  pos=0 offset=26 
+2018-09-20 18:08:31.235 [main] INFO  org.springbus.test.ByteBuffTest - newBufferByPos=                      wxyz                       

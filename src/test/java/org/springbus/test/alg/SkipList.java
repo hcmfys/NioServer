@@ -1,5 +1,6 @@
 package org.springbus.test.alg;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -34,7 +35,7 @@ public class SkipList<E extends Comparable<? super E>> {
     /**
      * 检查跳表中是否包含val节点
      * 
-     * @param node
+     * @param  val
      * @return
      */
     public boolean contains(E val) {
@@ -174,5 +175,19 @@ class SkipNode<E extends Comparable<? super E>> {
     public SkipNode(int MAX_LEVEL, E val) {
         this.next = new SkipNode[MAX_LEVEL];
         this.val = val;
+    }
+
+
+
+
+    public static void main(String[] args) {
+
+        SkipList<Integer> skipList=new SkipList<>();
+        skipList.insert(12);
+        skipList.insert(1932);
+        skipList.insert(3132);
+        skipList.insert(122);
+        skipList.insert(192);
+        System.out.println(  skipList.toString());
     }
 }
